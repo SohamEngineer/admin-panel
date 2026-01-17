@@ -1,9 +1,12 @@
 "use client"
 import { StatsCards } from '@/components/cardgrid'
 import { DataTable } from '@/components/data-table/data-table'
+import { failedpayTableColumns } from '@/components/features/failed-pay/columns'
 import { successfulpayTableColumns } from '@/components/features/successful-pay/successful-pay'
+import { failedpayTableData } from '@/data/payment/failed.payment'
 import { paymentOverviewData } from '@/data/payment/payment.card'
 import { successfulpayTableData } from '@/data/payment/successfull.payment'
+
 import React from 'react'
 
 function Payment() {
@@ -16,6 +19,7 @@ function Payment() {
             data={paymentOverviewData}
           />
         </section>
+        
         <section>
           <DataTable
             data={successfulpayTableData}
@@ -25,8 +29,8 @@ function Payment() {
         </section>
         <section>
           <DataTable
-            data={successfulpayTableData}
-            columns={successfulpayTableColumns}
+            data={failedpayTableData}
+            columns={failedpayTableColumns}
             getRowId={(row) => row.id.toString()}
           />
         </section>

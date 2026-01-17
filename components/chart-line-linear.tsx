@@ -15,8 +15,9 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
+import { ChartLineLinearProps } from "@/types/line-chart"
 
-import { type ChartLineLinearProps } from "@/types/charts"
+// import { type ChartLineLinearProps } from "@/types/charts"
 
 export function ChartLineLinear({
   title,

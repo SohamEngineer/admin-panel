@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  frontend:
+    image: next-admin-panel
+    build: .
+    ports:
+      - "3001:3000"
+    container_name: next-admin-panel
+    restart: unless-stopped
