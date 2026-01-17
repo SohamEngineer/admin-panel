@@ -1,0 +1,39 @@
+"use client"
+import { StatsCards } from '@/components/cardgrid'
+import { DataTable } from '@/components/data-table/data-table'
+import { successfulpayTableColumns } from '@/components/features/successful-pay/successful-pay'
+import { paymentOverviewData } from '@/data/payment/payment.card'
+import { successfulpayTableData } from '@/data/payment/successfull.payment'
+import React from 'react'
+
+function Payment() {
+  return (
+    <div className="w-full">
+      <div className="space-y-8 container-page">
+        <section>
+          <StatsCards
+            title="Platform Overview"
+            data={paymentOverviewData}
+          />
+        </section>
+        <section>
+          <DataTable
+            data={successfulpayTableData}
+            columns={successfulpayTableColumns}
+            getRowId={(row) => row.id.toString()}
+          />
+        </section>
+        <section>
+          <DataTable
+            data={successfulpayTableData}
+            columns={successfulpayTableColumns}
+            getRowId={(row) => row.id.toString()}
+          />
+        </section>
+
+      </div>
+    </div>
+  )
+}
+
+export default Payment
